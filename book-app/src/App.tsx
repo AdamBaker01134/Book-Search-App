@@ -1,24 +1,22 @@
+/**
+ * Main application component.
+ */
+
 import React from 'react';
-import logo from './logo.svg';
+
+import Search from './Search';
+
 import './App.css';
 
 function App() {
+
+  const onSearch = (query: string) => {
+    console.log(`Got "${query}" from search component :D`);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Search onSearch={onSearch}/>
     </div>
   );
 }
